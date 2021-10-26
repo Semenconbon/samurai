@@ -9,10 +9,10 @@ const MyPost = () => {
                 <button>Add post</button>
             </div>
             <div>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+
+                <Post message='Hello!!! Who are you?)' like='434'/>
+                <Post message='Very fine' like='15'/>
+                <Post message='Hello!!! I am first men in world!!!' like='960940'/>
             </div>
         </div>
     )
