@@ -4,3 +4,9 @@
     font-size: 20px;
     background-color: aqua;
 }
+.item a {
+    color: black;
+}
+.item a.activeNavLink{
+    color: darkgoldenrod;
+}
