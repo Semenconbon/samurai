@@ -6,6 +6,7 @@
 }
 .item a {
     color: black;
+    padding-left: 15px;
 }
 .item a.activeNavLink{
     color: darkgoldenrod;

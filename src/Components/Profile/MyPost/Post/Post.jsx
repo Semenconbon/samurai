@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src='https://bipbap.ru/wp-content/uploads/2018/03/03-3-700x637-640x582.jpg'/>
             {props.message}
             </div>
-            <span>like</span> {props.like}
+            <span>likes</span> {props.counterLike}
         </div>
     )
 }
