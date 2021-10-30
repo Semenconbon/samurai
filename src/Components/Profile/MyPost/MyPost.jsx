@@ -3,12 +3,12 @@ import Post from "./Post/Post";
 
 
 const MyPost = () => {
-
-    let messageDate = [
+    let posts = [
         {message: 'Hello!!! Who are you?)', counterLike: '24'},
         {message: 'YEEEEEEAAAAHHH', counterLike: '31'},
         {message: 'Hello, i first man in world', counterLike: '2'}
     ]
+    let post = posts.map( m => (<Post message={m.message} counterLike={m.counterLike}/>) )
 
     return (
         <div className={st.itemsBlock}>
@@ -17,9 +17,7 @@ const MyPost = () => {
                 <button>Add post</button>
             </div>
             <div>
-                <Post message={messageDate[0].message} counterLike={messageDate[0].counterLike}/>
-                <Post message={messageDate[1].message} counterLike={messageDate[1].counterLike}/>
-                <Post message={messageDate[2].message} counterLike={messageDate[2].counterLike}/>
+                {post}
             </div>
         </div>
     )
