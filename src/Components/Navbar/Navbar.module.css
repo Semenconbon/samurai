@@ -3,11 +3,26 @@
 
     font-size: 20px;
     background-color: aqua;
+
 }
 .item a {
     color: black;
-    padding-left: 15px;
+    padding-left: 35px;
+    text-decoration: none;
 }
 .item a.activeNavLink{
-    color: darkgoldenrod;
+    font-family: Arial;
+    font-size: 25px;
+}
+.friends {
+    font-family: -apple-system;
+    font-size: 25px;
+    padding-top: 100px;
+    padding-left: 22px;
+}
+nav img{
+    width: 40px;
+    height: 40px;
+    padding: 13px;
+    border-radius: 30px;
 }

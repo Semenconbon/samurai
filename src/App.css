@@ -16,7 +16,10 @@
   background-color: aqua;
 }
 .app-wrapper-content img{
+  height: 300px;
   width: 300px;
+  padding: 15px;
+  border-radius: 50px;
 }
 
 
