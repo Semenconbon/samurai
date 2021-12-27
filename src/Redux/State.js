@@ -1,10 +1,11 @@
+import {rerendering} from "../render";
 
 let state = {
     profilePage: {
         posts: [
-            {message: 'Hello!!! Who are you?)', counterLike: '24'},
-            {message: 'YEEEEEEAAAAHHH', counterLike: '31'},
-            {message: 'Hello, i first man in world', counterLike: '3'}
+            {id: 1, message: 'Hello!!! Who are you?)', counterLike: '24'},
+            {id: 2, message: 'YEEEEEEAAAAHHH', counterLike: '31'},
+            {id: 3, message: 'Hello, i first man in world', counterLike: '3'}
         ]
     },
     dialogsPage: {
@@ -27,10 +28,11 @@ let state = {
 
 export let addPost = (postMessage) => {
     let newPost = {
-        id: 5,
+        id: 4,
         message: postMessage,
-        likesCount: 0
+        counterLike: 0
     }
-    state.profilePage.posts.push();
+    state.profilePage.posts.push(newPost);
+    rerendering(state);
 }
 export default state

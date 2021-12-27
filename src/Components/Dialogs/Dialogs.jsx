@@ -1,5 +1,4 @@
 import st from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 import React from "react";
@@ -13,6 +12,7 @@ const Dialogs = (props) => {
         let text = newMessageElement.current.value;
         alert(text)
     }
+
     return (
         <div className={st.dialogs}>
             <div>
@@ -23,7 +23,6 @@ const Dialogs = (props) => {
                 <textarea ref={newMessageElement}></textarea>
                 <button onClick={addNewMessage}>send</button>
             </div>
-
         </div>
     )
 }
