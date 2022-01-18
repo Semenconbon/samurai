@@ -9,13 +9,13 @@ const MyPost = (props) => {
     let newPostElement = React.createRef()
 
     let addNewPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
+        // props.addPost(text)
+        props.dispatch({ type: 'ADD-POST'})
     }
 
     let onChangePost = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
     }
 
     return (
