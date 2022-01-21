@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 let store = {
     _state: {
@@ -9,7 +9,7 @@ let store = {
                 {id: 2, message: 'YEEEEEEAAAAHHH', counterLike: '31'},
                 {id: 3, message: 'Hello, i first man in world', counterLike: '3'}
             ],
-            newPostText: "Write to letter"
+            newPostText: ""
         },
 
         dialogsPage: {
@@ -21,12 +21,13 @@ let store = {
                 {id: 5, name: 'Igor', ava: 'https://memax.club/wp-content/uploads/2019/05/Kartinki_bez_lica_1_29050439.jpg'}
             ],
             messages: [
-                {id: 1, message: 'Hellooo)))', ava: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQND0Br49DEhXKhAaASompT8rXn8mzWE6r92A&usqp=CAU' },
-                {id: 2, message: 'Who are you?', ava: 'https://lh3.googleusercontent.com/proxy/oIZ7O6Uo-TBN7xAjEEvjGJDA-cgklc1-Znp81RlM72-Av1UrqqYxdqkCmsqlxhLLpBV8GVaWeys_kyvk0rWAXcAvb7_slT0Jf2wk3uqkiyArC89Korw'},
-                {id: 3, message: 'Yes', ava: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5d2_7E7fYhdaztfipZ2KZFLcyZi9PJ1k9ZA&usqp=CAU' },
-                {id: 4, message: 'I am friend)))', ava: 'https://www.meme-arsenal.com/memes/50569ac974c29121ff9075e45a334942.jpg'},
-                {id: 5, message: 'Oh. OMG, cringe', ava: 'https://memax.club/wp-content/uploads/2019/05/Kartinki_bez_lica_1_29050439.jpg'}
-            ]
+                {id: 1, message: 'Hellooo)))'},
+                {id: 2, message: 'Who are you?'},
+                {id: 3, message: 'Yes'},
+                {id: 4, message: 'I am friend)))'},
+                {id: 5, message: 'Oh. OMG, cringe'}
+            ],
+            newMessageText: ""
         },
 
     },
@@ -39,42 +40,12 @@ let store = {
     subscribe(observer){
         this._callSubscriber = observer
     },
-    addPost(){
-        let newPost = {
-            id: 4,
-            message: this._state.profilePage.newPostText,
-            counterLike: 0
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostChange(newText){
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },
     dispatch(action){
-        if (action.type === 'ADD-POST'){
-            let newPost = {
-                id: 4,
-                message: this._state.profilePage.newPostText,
-                counterLike: 0
-            }
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
-            let newText = action.newText
-            this._state.profilePage.newPostText = newText
-            this._callSubscriber(this._state)
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._callSubscriber(this._state)
     }
-
 }
-
-export const AddPostActionCreator = () => ({type: ADD_POST})
-export const UpdateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 window.store = store
 export default store
