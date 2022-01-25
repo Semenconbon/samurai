@@ -4,7 +4,6 @@ import React from "react";
 import {AddPostActionCreator, UpdateNewPostTextActionCreator} from "../../../Redux/profile-reducer";
 
 const MyPost = (props) => {
-
     let post = props.posts.map( m => (<Post message={m.message} counterLike={m.counterLike}/>) )
 
     let addNewPost = () => {

@@ -5,6 +5,7 @@ import React from "react";
 import {addMessageCreater, updateNewMessageChangeCreater} from "../../Redux/dialogs-reducer";
 
 const Dialogs = (props) => {
+
     let dialogMap = props.state.dialogs.map(d => <DialogsItem ava={d.ava} name={d.name} id={d.id}/>)
     let messagesMap = props.state.messages.map(m => <Message ava={m.ava} message={m.message}/>)
 
