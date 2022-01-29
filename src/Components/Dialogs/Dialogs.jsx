@@ -5,8 +5,8 @@ import React from "react";
 
 const Dialogs = (props) => {
     let debb = () => {
-        console.log('debb123');
-        console.log('123');
+        console.log('123debb');
+        console.log('321');
     }
     let dialogMap = props.dialogs.map(d => <DialogsItem ava={d.ava} name={d.name} id={d.id}/>)
     let messagesMap = props.messages.map(m => <Message ava={m.ava} message={m.message}/>)
