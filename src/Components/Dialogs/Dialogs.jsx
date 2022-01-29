@@ -9,11 +9,13 @@ const Dialogs = (props) => {
 
     let onSendMessageClick = () => {
         props.addMessageCreater()
+        debugger
     }
     let onNewMessageChange = (text) => {
         props.updateNewMessageChangeCreater(text)
     }
 
+    debugger
     return (
         <div className={st.dialogs}>
             <div>
