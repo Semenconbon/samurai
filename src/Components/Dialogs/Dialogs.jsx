@@ -4,8 +4,9 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Dialogs = (props) => {
-    let dialogMap = props.state.dialogs.map(d => <DialogsItem ava={d.ava} name={d.name} id={d.id}/>)
-    let messagesMap = props.state.messages.map(m => <Message ava={m.ava} message={m.message}/>)
+    debugger
+    let dialogMap = props.dialogs.map(d => <DialogsItem ava={d.ava} name={d.name} id={d.id}/>)
+    let messagesMap = props.messages.map(m => <Message ava={m.ava} message={m.message}/>)
 
     let onSendMessageClick = () => {
         props.addMessageCreater()
