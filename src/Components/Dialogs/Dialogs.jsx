@@ -4,22 +4,15 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Dialogs = (props) => {
-    let debb = () => {
-        console.log('123debb');
-        console.log('321');
-    }
-    let dialogMap = props.dialogs.map(d => <DialogsItem ava={d.ava} name={d.name} id={d.id}/>)
-    let messagesMap = props.messages.map(m => <Message ava={m.ava} message={m.message}/>)
-
+    let dialogMap = props.dialogsPage.dialogs.map(d => <DialogsItem ava={d.ava} key={d.id} name={d.name} id={d.id}/>)
+    let messagesMap = props.dialogsPage.messages.map(m => <Message ava={m.ava} key={m.id} message={m.message}/>)
     let onSendMessageClick = () => {
         props.addMessageCreater()
-        debugger
     }
     let onNewMessageChange = (text) => {
         props.updateNewMessageChangeCreater(text)
     }
 
-    debugger
     return (
         <div className={st.dialogs}>
             <div>
@@ -30,7 +23,7 @@ const Dialogs = (props) => {
                 <div>
                     <div><textarea placeholder={'Enter your message'}
                                    onChange={onNewMessageChange}
-                                   value={props.newMessageText} />
+                                   value={props.dialogsPage.newMessageText} />
                     </div>
                     <div><button onClick={onSendMessageClick}>send</button></div>
                 </div>

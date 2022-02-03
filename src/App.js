@@ -7,6 +7,7 @@ import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
 import Settings from "./Components/Settings/Settings";
 import DialogsConteiner from "./Components/Dialogs/DialogsConteiner";
+import UsersConteiner from "./Components/Users/UsersConteiner";
 
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
                         <Route path='/profile' render={() => <Profile />}/>
 
                         <Route path='/dialogs' render={() => <DialogsConteiner />}/>
+                        <Route path='/users' render={() => <UsersConteiner />}/>
+
                         {/*                     <Route path='/music' component={Music} />
                         <Route path='/settings' component={News} />
                         <Route path='/news' component={Settings} />*/}

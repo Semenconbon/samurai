@@ -3,7 +3,6 @@ import Post from "./Post/Post";
 import React from "react";
 
 const MyPost = (props) => {
-    debugger
     let post = props.posts.map( m => (<Post message={m.message} counterLike={m.counterLike}/>) )
 
     let addPost = () => {
